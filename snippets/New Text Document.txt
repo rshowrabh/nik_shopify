@@ -1,0 +1,2 @@
+shopify theme pull --store https://showrabh-test.myshopify.com
+shopify theme dev --store=https://showrabh-test.myshopify.com
