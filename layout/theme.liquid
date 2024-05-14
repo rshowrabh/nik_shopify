@@ -1,10 +1,18 @@
 <html>
   <head>
     {{ content_for_header }}
+    {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+    {{ 'style.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
-    <main id="main" role="main">
-      {{ content_for_layout }}
-    </main>
+    <div class="container">
+      {% section 'announchment-bar' %}
+      {% section 'header' %}
+      <main id="main" role="main">
+        {{ content_for_layout }}
+      </main>
+    </div>
   </body>
+  {{ 'jquery.min.js' | asset_url | script_tag }}
+  {{ 'bootstrap.min.js' | asset_url | script_tag }}
 </html>
