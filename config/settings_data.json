@@ -1,4 +1,22 @@
 {
   "current": {
+    "sections": {
+      "announchment-bar": {
+        "type": "announchment-bar",
+        "settings": {
+          "show_announcement_bar": true,
+          "announcement_bar_color": "#d7d4d4",
+          "announcement_bar_height": "50px"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   }
 }
