@@ -12,6 +12,7 @@
         {{ content_for_layout }}
       </main>
     </div>
+    {% section 'footer' %}
   </body>
   {{ 'jquery.min.js' | asset_url | script_tag }}
   {{ 'bootstrap.min.js' | asset_url | script_tag }}

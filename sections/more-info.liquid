@@ -1,0 +1,78 @@
+<section class="more-info">
+  <div class="more-info-wrapper">
+    <h1>{{ section.settings.text | escape }}</h1>
+    <p>
+      {{ section.settings.text2 | escape }}
+    </p>
+    <button>Shop</button>
+  </div>
+</section>
+
+<style>
+  .more-info {
+    background: {{ section.settings.background }};
+    color: {{ section.settings.text_color }};
+    display: flex;
+    justify-content: center;
+  }
+
+  .more-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .more-info-wrapper h1 {
+    font-size: 50px;
+
+  }
+
+  .more-info-wrapper button {
+    padding: 10px 20px;
+    background-color: rgb(3, 117, 35);
+    border: none;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .more-info-wrapper button:hover {
+    background-color: rgb(185, 185, 185);
+
+  }
+</style>
+{% schema %}
+  {
+    "name": "More-info",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#F4F4F4"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "#000000"
+      }, {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "default text"
+      }, {
+        "type": "text",
+        "id": "text2",
+        "label": "Text2",
+        "default": "default text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "more-info"
+      }
+    ]
+  }
+{% endschema %}
