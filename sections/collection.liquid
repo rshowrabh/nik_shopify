@@ -1,0 +1,54 @@
+<section>
+  <p>From collection.liquid</p>
+  <div class="row">
+    {% paginate collection.products by 4 %}
+      {% for product in collection.products %}
+
+        <div class="col">
+          <div class="card-group">
+            <div class="card">
+              <img
+                src="{{product.featured_image |  image_url }}"
+                class="card-img-top"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ product.title | link_to: product.url }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <p class="card-text">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {% endfor %}
+    {% endpaginate %}
+  </div>
+
+</section>
+
+
+{% schema %}
+  {
+    "name": "collection",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#000000"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "#F4F4F4"
+      }
+    ],
+    "presets": [
+      {
+        "name": "collection"
+      }
+    ]
+  }
+{% endschema %}

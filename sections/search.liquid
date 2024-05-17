@@ -1,0 +1,43 @@
+<section>
+  {% if search.performed %}
+    <h1>Heres is your resultss</h1>
+    {% for result in search.results %}
+      {% if result.object.type == 'page' %}
+        <a href="{{result.url}}">
+          {{ result.title }}</a>
+      {% elsif result.object.type == 'page' %}
+        <a href="{{result.url}}">
+          {{ result.title }}</a>
+      {% else result.object.type == 'page' %}
+        <a href="{{result.url}}">
+          {{ result.title }}</a>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <h1>Try something new</h1>
+  {% endif %}
+</section>
+
+{% schema %}
+  {
+    "name": "search",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#F4F4F4"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "default": "#000000"
+      }
+    ],
+    "presets": [
+      {
+        "name": "search"
+      }
+    ]
+  }
+{% endschema %}
